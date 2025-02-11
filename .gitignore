@@ -1,0 +1,5 @@
+.ashrc
+.env
+.env.*
+!.env.dist
+compose.override.yaml

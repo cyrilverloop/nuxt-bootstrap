@@ -1,0 +1,10 @@
+services:
+    app:
+        environment:
+            # - TZ=
+            - ENV=/home/node/.ashrc
+        ports:
+            - "3000:3000"
+        user: ${uid}:${gid}
+        volumes:
+            - ./.ashrc:/home/node/.ashrc
