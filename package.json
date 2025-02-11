@@ -1,6 +1,6 @@
 {
-    "name": "@cyrilverloop/nuxt-module",
-    "version": "0.1.0",
+    "name": "@cyrilverloop/nuxt-bootstrap",
+    "version": "0.1.1",
     "description": "A module to add Bootstrap to Nuxt 3.",
     "repository": {
         "type": "git",
