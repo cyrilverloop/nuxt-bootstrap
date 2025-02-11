@@ -1,4 +1,6 @@
 import {
+    addPlugin,
+    createResolver,
     defineNuxtModule
 } from '@nuxt/kit';
 
@@ -13,5 +15,10 @@ export default defineNuxtModule<ModuleOptions>({
     // Default configuration options of the Nuxt module
     defaults: {},
     setup(_options, _nuxt) {
+        _nuxt.options.css.push('bootstrap/dist/css/bootstrap.min.css');
+        const resolver = createResolver(import.meta.url);
+
+        // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+        addPlugin(resolver.resolve('./runtime/plugins/useBootstrap.client'));
     }
 });

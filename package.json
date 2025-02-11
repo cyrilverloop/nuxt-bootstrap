@@ -3,8 +3,8 @@
     "version": "alpha1",
     "description": "A module to add Bootstrap to Nuxt 3.",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/cyrilverloop/nuxt-module.git"
+        "type": "git",
+        "url": "git+https://github.com/cyrilverloop/nuxt-module.git"
     },
     "license": "MIT",
     "type": "module",
@@ -32,7 +32,8 @@
         "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
     },
     "dependencies": {
-        "@nuxt/kit": "^3.15.4"
+        "@nuxt/kit": "^3.15.4",
+        "bootstrap": "^5.3.3"
     },
     "devDependencies": {
         "@nuxt/devtools": "^2.0.0",
