@@ -7,8 +7,8 @@
             link: "accordion"
         },
         {
-            name: "Alerts",
-            link: "alerts"
+            name: "Alert",
+            link: "alert"
         },
         {
             name: "Badge",

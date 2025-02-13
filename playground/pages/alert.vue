@@ -12,7 +12,7 @@
                 link: "/"
             }
         ],
-        current: "Alerts"
+        current: "Alert"
     };
 </script>
 
@@ -20,29 +20,29 @@
     <NuxtLayout
         name="default"
         :breadcrumbs="breadcrumbs"
-        :currentNavItem="'alerts'"
+        :currentNavItem="'alert'"
     >
-        <h1>Alerts !</h1>
+        <h1>Alert !</h1>
 
         <h2>Non dismissible</h2>
 
-        <BSAlerts
+        <BSAlert
             v-for="variant in BSVariant"
             :key="variant"
             :variant="variant"
         >
             {{ variant }} alert !
-        </BSAlerts>
+        </BSAlert>
 
         <h2>Dismissible</h2>
 
-        <BSAlerts
+        <BSAlert
             v-for="variant in BSVariant"
             :key="variant"
             :variant="variant"
             :dismissible="true"
         >
             {{ variant }} alert !
-        </BSAlerts>
+        </BSAlert>
     </NuxtLayout>
 </template>
