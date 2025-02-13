@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { type BSBreadcrumbs, BSVariant } from '#nbs'
+    import { type BSBreadcrumbs, BSVariant } from '#nbs'
 
-definePageMeta({
-    layout: false
-});
+    definePageMeta({
+        layout: false
+    });
 
-const breadcrumbs: BSBreadcrumbs = {
-    parents: [
-        {
-            name: "Home",
-            link: "/"
-        }
-    ],
-    current: "Badge"
-};
+    const breadcrumbs: BSBreadcrumbs = {
+        parents: [
+            {
+                name: "Home",
+                link: "/"
+            }
+        ],
+        current: "Badge"
+    };
 </script>
 
 <template>
