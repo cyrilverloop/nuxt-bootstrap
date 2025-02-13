@@ -3,7 +3,8 @@ import {
     addPlugin,
     addTypeTemplate,
     createResolver,
-    defineNuxtModule
+    defineNuxtModule,
+    resolvePath
 } from '@nuxt/kit';
 
 // Module options TypeScript interface definition
@@ -16,7 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
     // Default configuration options of the Nuxt module
     defaults: {},
-    setup(_options, _nuxt) {
+    async setup(_options, _nuxt) {
         _nuxt.options.css.push('bootstrap/dist/css/bootstrap.min.css');
         const resolver = createResolver(import.meta.url);
 
@@ -72,7 +73,6 @@ export default defineNuxtModule<ModuleOptions>({
             + `};`,
         });
 
-        const typesFile = resolver.resolve('./../.nuxt/types/nuxt-bootstrap.d');
-        _nuxt.options.alias['#nbs'] = typesFile;
+        _nuxt.options.alias['#nbs'] = await resolvePath("#build") + "/types/nuxt-bootstrap.d";
     }
 });
