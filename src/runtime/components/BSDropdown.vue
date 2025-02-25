@@ -13,12 +13,16 @@
 
     const {
         variant = BSVariant.secondary,
+        outline = false,
+        textNoWrap = false,
         splitted = false,
         direction = BSDropdownDirection.down,
         autoclose = BSAutoClose.true
     } = defineProps<{
         items?: (BSDropdownContent|BSDropdownDivider)[],
         variant?: BSVariant,
+        outline?: boolean,
+        textNoWrap?: boolean,
         splitted?: boolean,
         size?: BSSize.sm|BSSize.lg,
         centered?: boolean,
@@ -27,6 +31,13 @@
         menuEnd?: boolean,
         autoclose?: BSAutoClose
     }>();
+
+    if(
+        variant === BSVariant.light &&
+        outline === true
+    ) {
+        throw new Error("A light oulined BSDropdown will be invisible (white text on a white background).");
+    }
 </script>
 
 <template>
@@ -41,6 +52,8 @@
         <BSButton
             v-if="splitted !== true || ((rtl !== true || direction !== BSDropdownDirection.end) && (rtl === true || direction !== BSDropdownDirection.start))"
             :variant="variant"
+            :outline="outline"
+            :textNoWrap="textNoWrap"
             :class="[
                 {'dropdown-toggle': splitted === false},
                 {'btn-sm': size === BSSize.sm},
@@ -56,6 +69,8 @@
         <BSButton
             v-if="splitted === true"
             :variant="variant"
+            :outline="outline"
+            :textNoWrap="textNoWrap"
             :class="[
                 {'btn-sm': size === BSSize.sm},
                 {'btn-lg': size === BSSize.lg}

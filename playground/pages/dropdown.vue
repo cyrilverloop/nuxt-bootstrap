@@ -34,6 +34,15 @@
         new BSDropdownDivider(),
         new BSDropdownLink("Disabled item", "#", false, true)
     ];
+
+    const outlineVariants: BSVariant[] = [];
+
+    for(const [key, variant] of Object.entries(BSVariant)) {
+
+        if(variant !== BSVariant.light) {
+            outlineVariants.push(BSVariant[variant]);
+        }
+    }
 </script>
 
 <template>
@@ -57,12 +66,41 @@
         </BSDropdown>
 
 
+        <h2>Outlined</h2>
+
+        <BSDropdown
+            v-for="variant in outlineVariants"
+            :key="variant"
+            :variant="variant"
+            :outline="true"
+            :items="items"
+            class="mb-1"
+        >
+            Dropdown {{ variant }} button
+        </BSDropdown>
+
+
         <h2>Splitted</h2>
 
         <BSDropdown
             v-for="variant in BSVariant"
             :key="variant"
             :variant="variant"
+            :items="items"
+            :splitted="true"
+            class="me-1 mb-1"
+        >
+            Dropdown {{ variant }} button
+        </BSDropdown>
+
+
+        <h2>Splitted outlined</h2>
+
+        <BSDropdown
+            v-for="variant in outlineVariants"
+            :key="variant"
+            :variant="variant"
+            :outline="true"
             :items="items"
             :splitted="true"
             class="me-1 mb-1"
@@ -234,6 +272,17 @@
             class="mb-1"
         >
             Dropdown auto close false
+        </BSDropdown>
+
+
+        <h2>Text no wrap</h2>
+
+        <BSDropdown
+            :items="items"
+            :textNoWrap="true"
+            class="mb-1"
+        >
+            Text no wrap
         </BSDropdown>
 
 
