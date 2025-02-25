@@ -57,7 +57,7 @@
                     :aria-controls="item.id"
                     :aria-expanded="(item?.show === true) ? 'true' : 'false'"
                 >
-                    {{ item.title }}
+                    <slot name="item-title" :title="item.title" />
                 </button>
             </h2>
 
@@ -68,7 +68,7 @@
                 :data-bs-parent="(alwaysOpened === false) ? id : null"
             >
                 <div class="accordion-body">
-                    {{ item.content }}
+                    <slot name="item-content" :content="item.content" />
                 </div>
             </div>
         </div>

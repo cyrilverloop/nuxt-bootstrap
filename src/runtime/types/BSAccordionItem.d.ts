@@ -1,6 +1,6 @@
 export default interface BSAccordionItem {
-    content: string,
+    content: any,
     id: string,
-    title: string,
+    title: any,
     show?: boolean
 };

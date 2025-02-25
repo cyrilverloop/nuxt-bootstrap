@@ -86,7 +86,15 @@
         <BSAccordion
             :id="'non-flushed'"
             :items="nonFlushedItems"
-        />
+        >
+            <template #item-title="{ title }">
+                {{ title }}
+            </template>
+
+            <template #item-content="{ content }">
+                {{ content }}
+            </template>
+        </BSAccordion>
 
         <h2>Flushed</h2>
 
@@ -94,7 +102,15 @@
             :id="'flushed'"
             :items="flushedItems"
             :flushed="true"
-        />
+        >
+            <template #item-title="{ title }">
+                {{ title }}
+            </template>
+
+            <template #item-content="{ content }">
+                {{ content }}
+            </template>
+        </BSAccordion>
 
         <h2>Always opened</h2>
 
@@ -102,6 +118,14 @@
             :id="'always-opened'"
             :items="alwaysOpenedItems"
             :alwaysOpened="true"
-        />
+        >
+            <template #item-title="{ title }">
+                {{ title }}
+            </template>
+
+            <template #item-content="{ content }">
+                {{ content }}
+            </template>
+        </BSAccordion>
     </NuxtLayout>
 </template>
