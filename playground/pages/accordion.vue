@@ -71,6 +71,30 @@
             show: true
         }
     ]);
+
+    const bodyWithoutPaddingItems: Ref<BSAccordionItem[]> = ref([
+        {
+            id: "without-padding-item-1",
+            title: "Title 1",
+            content: "Content 1",
+            show: true,
+            noPadding: true
+        },
+        {
+            id: "without-padding-item-2",
+            title: "Title 2",
+            content: "Content 2",
+            show: true,
+            noPadding: true
+        },
+        {
+            id: "without-padding-item-3",
+            title: "Title 3",
+            content: "Content 3",
+            show: true,
+            noPadding: true
+        }
+    ]);
 </script>
 
 <template>
@@ -118,6 +142,21 @@
             :id="'always-opened'"
             :items="alwaysOpenedItems"
             :alwaysOpened="true"
+        >
+            <template #item-title="{ title }">
+                {{ title }}
+            </template>
+
+            <template #item-content="{ content }">
+                {{ content }}
+            </template>
+        </BSAccordion>
+
+        <h2>Body without padding</h2>
+
+        <BSAccordion
+            :id="'without-padding'"
+            :items="bodyWithoutPaddingItems"
         >
             <template #item-title="{ title }">
                 {{ title }}

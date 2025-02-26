@@ -67,7 +67,10 @@
                 :class="{'show': item?.show}"
                 :data-bs-parent="(alwaysOpened === false) ? id : null"
             >
-                <div class="accordion-body">
+                <div
+                    class="accordion-body"
+                    :class="(item?.noPadding === true) ? 'p-0' : null"
+                >
                     <slot name="item-content" :content="item.content" />
                 </div>
             </div>
