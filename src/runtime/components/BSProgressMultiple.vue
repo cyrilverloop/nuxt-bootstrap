@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { type BSProgress, BSVariant } from "#nbs";
+    import { type BSProgress } from "#nbs";
 
     const {
         progresses
