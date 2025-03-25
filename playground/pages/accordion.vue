@@ -95,6 +95,25 @@
             noPadding: true
         }
     ]);
+
+    const headerContainingTags: Ref<BSAccordionItem[]> = ref([
+        {
+            id: "header-containing-tags-1",
+            title: "Title 1",
+            content: "Content 1",
+            show: true
+        },
+        {
+            id: "header-containing-tags-2",
+            title: "Title 2",
+            content: "Content 2"
+        },
+        {
+            id: "header-containing-tags-3",
+            title: "Title 3",
+            content: "Content 3"
+        }
+    ]);
 </script>
 
 <template>
@@ -160,6 +179,21 @@
         >
             <template #item-title="{ title }">
                 {{ title }}
+            </template>
+
+            <template #item-content="{ content }">
+                {{ content }}
+            </template>
+        </BSAccordion>
+
+        <h2>Header containing HTML tags</h2>
+
+        <BSAccordion
+            :id="'header-containing-tags'"
+            :items="headerContainingTags"
+        >
+            <template #item-title="{ title }">
+                <span>{{ title }}</span>
             </template>
 
             <template #item-content="{ content }">
