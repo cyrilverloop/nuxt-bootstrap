@@ -39,14 +39,15 @@
         class="accordion"
         :class="{'accordion-flush': flushed}"
         :id="id"
-        @click.stop="toggleItems($event, items)"
     >
         <div
             v-for="(item, itemIndex) in items"
             :key="item.id"
             class="accordion-item"
         >
-            <h2 class="accordion-header">
+            <h2 class="accordion-header"
+                @click.stop="toggleItems($event, items)"
+            >
                 <button
                     class="accordion-button"
                     :class="{'collapsed': item?.show !== true}"
