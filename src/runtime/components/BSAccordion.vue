@@ -17,7 +17,8 @@
      * @param items the items.
      */
     function toggleItems(event: any, items: BSAccordionItem[]) {
-        const itemIndex = event.target.dataset.itemIndex;
+        const button = event.target.closest(".accordion-button");
+        const itemIndex = button.dataset.itemIndex;
         const currentItem = items[itemIndex];
 
         for(const item of items) {
@@ -46,7 +47,6 @@
             class="accordion-item"
         >
             <h2 class="accordion-header"
-                @click.stop="toggleItems($event, items)"
             >
                 <button
                     class="accordion-button"
@@ -57,6 +57,7 @@
                     :data-bs-target="`#${item.id}`"
                     :aria-controls="item.id"
                     :aria-expanded="(item?.show === true) ? 'true' : 'false'"
+                    @click.stop="toggleItems($event, items)"
                 >
                     <slot name="item-title" :title="item.title" />
                 </button>
