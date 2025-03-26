@@ -59,5 +59,15 @@
             :type="BSSpinnerType.grow"
             :small="true"
         />
+
+        <h2>With hidden text</h2>
+
+        <BSSpinner
+            v-for="variant in BSVariant"
+            :key="variant"
+            :variant="variant"
+        >
+            {{ variant }}
+        </BSSpinner>
     </NuxtLayout>
 </template>
