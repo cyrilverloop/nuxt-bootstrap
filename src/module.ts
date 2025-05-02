@@ -49,7 +49,7 @@ export default defineNuxtModule<ModuleOptions>({
             + `import { BSJustifyContent } from "` + resolve('./runtime/types/BSJustifyContent') + `";\n`
             + `import { BSSize } from "` + resolve('./runtime/types/BSSize') + `";\n`
             + `import { BSSpinnerType } from "` + resolve('./runtime/types/BSSpinnerType') + `";\n`
-            + `import { BSVariant } from "` + resolve('./runtime/types/BSVariant') + `";\n`
+            + `import BSVariant from "` + resolve('./runtime/types/BSVariant') + `";\n`
             + `export {`
             + `type BSAccordionItem,`
             + `type BSBadge,`

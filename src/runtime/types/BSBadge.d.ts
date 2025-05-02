@@ -1,4 +1,4 @@
-import type BSVariant from "./BSVariant";
+import BSVariant from "./BSVariant";
 
 export default interface BSBadge {
     text: string,

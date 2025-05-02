@@ -1,4 +1,4 @@
-export enum BSVariant {
+enum BSVariant {
     danger = "danger",
     dark = "dark",
     info = "info",
@@ -8,3 +8,5 @@ export enum BSVariant {
     success = "success",
     warning = "warning"
 }
+
+export default BSVariant;
